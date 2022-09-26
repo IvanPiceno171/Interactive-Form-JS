@@ -10,8 +10,6 @@ dropDown.addEventListener('change', () => {
     if (dropDown.value == 'other') {
         console.log('wor')
         otherJobInput.classList.remove('hiddenInput');
-        // dropDown.addEventListener('change', () =>{
-        //     otherJobInput.classList.remove('hiddenInput') })
 
     }})
 
@@ -41,6 +39,7 @@ designSelect.addEventListener('change', () =>{
 
      // when checkboxeed is clicked the $price total should increase
          //grab checkboxed value by clicking
+         document.getElementById('activities').focus();
          const actBox = document.getElementById('activities-box')
 const totalCost = document.querySelector(".activities-cost");
 actBox.addEventListener('change', () => {
@@ -48,7 +47,7 @@ actBox.addEventListener('change', () => {
     const checked = actBox.querySelectorAll("input:checked");
     console.log(checked)
     const total = checked.length * 100;
-    totalCost.textContent = `$${total}`;   
+    totalCost.textContent = ` Total: $${total}`;   
 }
 );
 
@@ -59,16 +58,11 @@ const payWith = document.getElementById('payment');
 const cardNumInput = document.getElementById('cc-num')
 const ccNotPicked = document.querySelectorAll('.payment-methods');
 payWith.addEventListener('change', ()=>{
-
     if(payWith.value == 'paypal' || payWith.value == 'bitcoin'){
         document.querySelector('#credit-card').style = 'display: none'
     }
-    if(payWith.value == 'bitcoin'){
-
-    }
 })
 
-// check if name input is not empty
 const nameInput = document.getElementById('name');
 nameInput.focus();
 const emailInput = document.getElementById('email')
